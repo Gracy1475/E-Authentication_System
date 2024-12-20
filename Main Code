@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#define MAX_LENGTH 50
+int authenticateUser(char *enteredUsername, char *enteredPassword)
+{
+    char actualUsername[MAX_LENGTH]="GracyChristian";
+    char actualPassword[MAX_LENGTH]="Gr@140705";
+    if (strcmp(enteredUsername, actualUsername) == 0 && strcmp(enteredPassword, actualPassword) == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+int main()
+{
+    char username[MAX_LENGTH];
+    char password[MAX_LENGTH];
+    printf("Enter your username: ");
+    scanf("%s", username);
+    printf("Enter your password: ");
+    scanf("%s", password);
+    if (authenticateUser(username, password))
+    {
+        printf("Authentication successful. Welcome, %s!\n", username);
+    }
+    else
+    {
+        printf("Authentication failed. Invalid username or password.\n");
+    }
+    return 0;
+}
